@@ -12,16 +12,16 @@ count = 1
 count_max = 218
 img_width = 450
 img_height = 600
-wait = 1
+wait = 2
 
 driver.set_window_size(img_width, img_height)
 driver.get(missionchan)
 while count <= count_max:
     imgurl = driver.find_element_by_id('img').get_attribute('src')
     driver.get(imgurl)
+    sleep(wait)
     if driver.save_screenshot(str(count) + '.png'):
         print(imgurl)
     driver.back()
     driver.find_element_by_id('next').click()
     count += 1
-    sleep(wait)
