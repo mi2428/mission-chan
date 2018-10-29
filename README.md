@@ -6,7 +6,7 @@
 
 1. 画像ファイル名をゼロパディングする．
 ```
-% for i in $(ls -v); do mv $i $(print '%03d.png' $(basename $i .png)); done
+% for i in $(ls -v); do mv $i $(printf '%03d.png' $(basename $i .png)); done
 ```
 2. ナビゲーションは画像フォルダに `navi.txt` をTSV形式で保存する．
 ```
